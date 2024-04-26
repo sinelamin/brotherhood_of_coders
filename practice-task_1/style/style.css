@@ -1,0 +1,247 @@
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "PT Sans", sans-serif;
+  --second-family: "Montserrat", sans-serif;
+  --third-family: "Lato", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.form {
+  margin: 50px auto;
+  padding: 53px 98px;
+  margin-bottom: 35px;
+  max-width: 754px;
+  border: 1px solid #000;
+  border-radius: 12px;
+}
+
+.form__title {
+  margin-top: 0;
+  margin-bottom: 37px;
+  font-family: var(--second-family);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 121%;
+  color: #0c1014;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper-left {
+  width: 66%;
+}
+
+.form-field {
+  display: flex;
+  margin: 0;
+  max-width: 100%;
+  margin-bottom: 32px;
+  flex-direction: column;
+  height: 56px;
+  font-weight: 400;
+  border: 2px solid #D6DADE;
+  border-radius: 4px;
+}
+
+.form-field__label {
+  padding-left: 16px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 133%;
+  color: #6A6E72;
+}
+
+.form-field__label::before {
+  content: '✱';
+  margin-right: 5px;
+  color: #D90000;
+}
+
+.form-field__input {
+  display: block;
+  padding-left: 16px;
+  height: 26px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0c1014;
+  border: none;
+  outline: none;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.field__select {
+  appearance: none;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  background-image: url('../assets/activity-icon.svg');
+}
+
+.form-field__cover {
+  margin-top: 16px;
+}
+
+.field-logo {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 171%;
+  color: #6a6e72;
+  width: 175px;
+  border: none;
+}
+
+.field-logo>.form-field__label {
+  padding: 0;
+}
+
+.form-field__img {
+  display: block;
+  height: 175px;
+  width: 175px;
+  object-fit: cover;
+  object-position: center;
+  background-image: radial-gradient(circle, #ffffff, #d3d9dd);
+  border-radius: 50%;
+  transition: filter .8s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  width: 175px;
+  transform: translateY(50%);
+  border-radius: 50%;
+  opacity: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: opacity .8s ease;
+}
+
+.overlay-text {
+  margin: 0 auto;
+  width: 80px;
+}
+
+.form-field__img--hover {
+  filter: brightness(50%);
+}
+
+.overlay--hover {
+  opacity: 1;
+}
+
+.field-logo__load {
+  display: none;
+}
+
+.form-field__reset-img {
+  position: relative;
+  bottom: 150px;
+  left: 40%;
+  width: 36px;
+  height: 36px;
+  background-image: url('../assets/logo-reset-icon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 3;
+  transition: transform .5s;
+}
+
+.reset-img--hover-active:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.field-optional {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field__icon {
+  margin-right: 16px;
+  width: 18px;
+  height: 18px;
+}
+
+.field-submit {
+  padding: 0;
+}
+
+.form-field__input--submit {
+  height: 100%;
+  font-family: var(--third-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 112%;
+  text-align: center;
+  background-color: #E5266E;
+  color: #fff;
+}
+
+.form-btn__close {
+  display: block;
+  margin: 0 auto;
+  height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0848c0;
+  cursor: pointer;
+}

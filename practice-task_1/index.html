@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Practice task#1</title>
+</head>
+
+<body>
+  <form class="form" action="" method="post">
+    <h2 class="form__title">Стать партнёром проекта</h2>
+    <div class="form-wrapper">
+      <div class="wrapper-left">
+        <div class="form-field">
+          <label class="form-field__label" for="company">Название организации</label>
+          <input class="form-field__input" name="company" type="text" required>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label" for="phone">Телефон</label>
+          <input class="form-field__input field-input__phone" name="phone" type="tel" pattern="\+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
+            required placeholder="+7 999 999-99-99" maxlength="16">
+        </div>
+        <div class="form-field">
+          <label class="form-field__label" for="email">E-mail</label>
+          <input class="form-field__input" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="form-field field-logo">
+        <label class="form-field__label" for="logo">Логотип (jpeg, png)</label>
+        <div class="form-field__cover">
+          <img class="form-field__img"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+          <div class="overlay">
+            <img class="overlay-img" src="./assets/load-logo-icon.svg" alt="">
+            <p class="overlay-text">Выберите файл</p>
+          </div>
+        </div>
+        <input class="form-field__input field-logo__load" name="logo" type="file" accept="image/jpeg, image/png"
+          required>
+        <button class="form-field__reset-img"></button>
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-field__label" for="activity">Направление</label>
+      <div class="select-wrapper">
+        <select class="form-field__input field__select" name="activity">
+          <option value="Экология">Экология</option>
+          <option value="Паркур">Паркур</option>
+          <option value="Левитация">Левитация</option>
+          <option value="Горькие огуречные попки">Горькие огуречные попки</option>
+          <option value="Конспирология">Конспирология</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/webSite-icon.svg" alt="web-site">
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/vk-icon.svg" alt="vk">
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/ok-icon.svg" alt="ok">
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/fb-icon.svg" alt="facebook">
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/ig-icon.svg" alt="instagram">
+    </div>
+    <div class="form-field field-optional">
+      <input class="form-field__input">
+      <img class="form-field__icon" src="./assets/yt-icon.svg" alt="youtube">
+    </div>
+    <div class="form-field">
+      <label class="form-field__label" for="director">Руководитель</label>
+      <input class="form-field__input" type="text" name="director">
+    </div>
+    <div class="form-field field-submit">
+      <input class="form-field__input form-field__input--submit" value="Стать партнёром проекта" type="submit">
+    </div>
+    <button class="form-btn__close">Отменить</button>
+  </form>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
