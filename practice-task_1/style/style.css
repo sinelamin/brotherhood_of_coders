@@ -6,6 +6,9 @@ html {
   --font-family: "PT Sans", sans-serif;
   --second-family: "Montserrat", sans-serif;
   --third-family: "Lato", sans-serif;
+  --index: calc(1vw + 1vh);
+  --padding-form: calc(var(--index) * 2.3) calc(var(--index) * 4.2);
+  --padding-form-mob: calc(var(--index) * 1) calc(var(--index) * 2);
 }
 
 *,
@@ -16,7 +19,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  /* overflow: hidden; */
+  font-size: 16px;
 }
 
 .body--form-active::before {
@@ -64,11 +67,10 @@ ul {
 .form {
   position: relative;
   display: none;
-  padding: 0 35px;
   z-index: 2;
   margin: 50px auto;
   margin-bottom: 35px;
-  padding: 53px 98px;
+  padding: var(--padding-form);
   max-width: 754px;
   background-color: #fff;
   border: 1px solid #000;
@@ -81,7 +83,7 @@ ul {
 
 .form__title {
   margin-top: 0;
-  margin-bottom: 37px;
+  margin-bottom: calc(var(--index) * 1.5);
   font-family: var(--second-family);
   font-weight: 800;
   font-size: 28px;
@@ -103,7 +105,7 @@ ul {
   display: flex;
   margin: 0;
   max-width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: calc(var(--index) * 1.3);
   flex-direction: column;
   height: 56px;
   font-weight: 400;
@@ -131,7 +133,6 @@ ul {
   height: 26px;
   width: 100%;
   background-color: #fff;
-  font-size: 16px;
   line-height: 150%;
   color: #0c1014;
   border: none;
@@ -153,8 +154,8 @@ ul {
   top: 50%;
   right: 16px;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: calc(var(--index) * 1.05);
+  height: calc(var(--index) * 1.05);
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -163,6 +164,7 @@ ul {
 
 .form-field__cover {
   margin-top: 16px;
+  height: 150px;
 }
 
 .field-logo {
@@ -183,8 +185,8 @@ ul {
 
 .form-field__img {
   display: block;
-  height: 175px;
   width: 175px;
+  height: 175px;
   object-fit: cover;
   object-position: center;
   background-image: radial-gradient(circle, #ffffff, #d3d9dd);
@@ -195,15 +197,14 @@ ul {
 }
 
 .overlay {
-  position: absolute;
-  top: 50%;
+  position: relative;
   width: 175px;
-  transform: translateY(50%);
+  transform: translateY(-140%);
   border-radius: 50%;
   opacity: 0;
   color: #fff;
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-overlay);
   line-height: 150%;
   text-decoration: underline;
   cursor: pointer;
@@ -230,7 +231,7 @@ ul {
 
 .form-field__reset-img {
   position: relative;
-  bottom: 150px;
+  bottom: 140px;
   left: 40%;
   width: 36px;
   height: 36px;
@@ -265,10 +266,10 @@ ul {
 }
 
 .form-field__input--submit {
+  padding: 0;
   height: 100%;
   font-family: var(--third-family);
   font-weight: 600;
-  font-size: 16px;
   line-height: 112%;
   text-align: center;
   background-color: #E5266E;
@@ -282,8 +283,65 @@ ul {
   margin: 0 auto;
   height: 24px;
   font-weight: 400;
-  font-size: 16px;
   line-height: 150%;
   color: #0848c0;
   cursor: pointer;
+}
+
+
+@media (max-width: 760px) {
+  .field-logo> .form-field__label {
+    display: block;
+    width: 135px;
+  }
+}
+
+
+@media (max-width: 679px) {
+  .form {
+    padding: var(--padding-form-mob);
+  }
+
+  .form__title {
+    font-size: 18px;
+  }
+
+  .form-wrapper {
+    flex-direction: column-reverse;
+    height: 420px;
+  }
+  
+  .wrapper-left {
+    width: 100%;
+  }
+
+  .form-field {
+    height: 46px;
+  }
+  .form-field__input {
+    height: 20px;
+  }
+
+  .form-field__input--submit {
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .select-wrapper::after {
+    top: 0;
+  }
+
+  .form-field__input--submit,
+  .form-btn__close {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .form-field__input--submit,
+  .form-btn__close {
+    font-size: 12px;
+  }
 }
