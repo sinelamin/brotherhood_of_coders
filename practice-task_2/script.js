@@ -11,7 +11,7 @@ async function getDataFetch() {
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
-      throw new Error('Failed to fetch currency rates');
+      throw new Error('Failed to fetch posts');
     }
     const data = await response.json();
 
@@ -48,7 +48,7 @@ async function getDataFetch() {
       document.querySelector('.table-body').append(tr);
     });
   } catch (error) {
-    console.error("Error fetching currency rates:", error);
+    console.error("Error fetching posts:", error);
     throw error;
   }
 }
