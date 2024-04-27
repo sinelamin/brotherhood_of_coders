@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table,
+.table-header__item,
+.table-body__item {
+  border: 1px solid black;
+}
+
+.table-header__item,
+.table-body__item {
+  padding: 8px;
+  text-align: left;
+}
