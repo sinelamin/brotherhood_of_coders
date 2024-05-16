@@ -73,7 +73,6 @@ ul {
   padding: var(--padding-form);
   max-width: 754px;
   background-color: #fff;
-  border: 1px solid #000;
   border-radius: 12px;
 }
 
@@ -109,11 +108,12 @@ ul {
   flex-direction: column;
   height: 56px;
   font-weight: 400;
-  border: 2px solid #D6DADE;
+  border: 1px solid #D6DADE;
   border-radius: 4px;
 }
 
 .form-field__label {
+  margin-top: 8px;
   padding-left: 16px;
   height: 16px;
   font-size: 12px;
@@ -318,6 +318,11 @@ ul {
   .form-field {
     height: 46px;
   }
+
+  .form-field__label {
+    margin-top: 0;
+  }
+
   .form-field__input {
     height: 20px;
   }
