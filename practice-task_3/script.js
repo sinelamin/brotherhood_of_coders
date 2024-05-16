@@ -20,8 +20,9 @@ async function getDataFetch() {
 
 
 const tableBody = document.querySelector('.table-body');
+let substring = '';
 
-async function createTable(substring = "", column = null, sort = false) {
+async function createTable(substring, column = null, sort = false) {
   const data = await getDataFetch();
 
   const newData = substring ? search(data, substring) : data;
@@ -88,7 +89,7 @@ tableHeaderItems.forEach(tableHeaderItem => {
   tableHeaderItem.addEventListener('click', (e) => {
     const columnName = e.target.innerHTML;
     clearTable();
-    createTable("", columnName, true);
+    createTable(substring, columnName, true);
 
     if (ascending) {
       e.target.classList.add('table-header__item--active-down');
@@ -104,11 +105,11 @@ tableHeaderItems.forEach(tableHeaderItem => {
 const searchInput = document.querySelector('.input-search');
 
 searchInput.addEventListener('input', (e) => {
-  const searchValue = e.target.value;
+  substring = e.target.value;
 
   clearTable();
-  if (searchValue.length >= 3) {
-    createTable(searchValue);
+  if (substring.length >= 3) {
+    createTable(substring);
   } else {
     createTable();
   }
